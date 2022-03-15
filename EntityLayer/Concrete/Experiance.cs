@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ experiance SEKMESİ ve Deneyimler KISMI
     public class Experiance
     {
         public int ExperianceId { get; set; }

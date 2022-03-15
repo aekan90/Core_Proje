@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ SKİLL SEKMESİ, MYSKİLL KISMI
     public class Skill
     {
         public int SkillId { get; set; } 

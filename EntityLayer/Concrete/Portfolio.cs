@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ BAŞLIK, KARŞILAMA KISMI
     public class Portfolio
     {
         public int PortfolioId { get; set; }

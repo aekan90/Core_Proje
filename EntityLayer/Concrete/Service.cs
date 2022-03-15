@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ SERVİCES SEKMESİ 
     public class Service
     {
         public int ServiceId { get; set; }

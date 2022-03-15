@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ açılışta en üst karşılama kısmı 
     public class Feature
     {
         public int FeatureID { get; set; }

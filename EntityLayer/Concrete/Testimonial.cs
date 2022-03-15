@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    // ANA SAYFADAKİ REFERANSLAR-TESTİMONİAL KISMI
     public class Testimonial
     {
         public int TestimonialId { get; set; }
