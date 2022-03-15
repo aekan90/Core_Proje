@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace EntityLayer.Concrete
     // ANA SAYFADAKİ experiance SEKMESİ ve Deneyimler KISMI
     public class Experiance
     {
+        [Key]  // ID için key atamsı yapıyoruz. ID birincil anahtar olması için
         public int ExperianceId { get; set; }
         public string Name { get; set; }
         public string Date { get; set; }
