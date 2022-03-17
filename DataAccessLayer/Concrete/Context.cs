@@ -15,7 +15,8 @@ namespace DataAccessLayer.Concrete
     {
         // tabloları property olarak çağıracağız.
 
-        // Bağlantı Stringi Ayarlıyoruz. Bizim bağlantı adresimizi tutacak
+        // Bağlam (tdk): Deste,İlişki örgüsü, Bağlantısı, kontext
+        // Context(bağlam) Stringi Ayarlıyoruz. Bizim bağlantı adresimizi tutacak
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-OA1OLIM;database=CoreProjeDB;integrated security=true");
@@ -23,6 +24,7 @@ namespace DataAccessLayer.Concrete
 
         // Entity katmanındaki sınıfları tek tek burada çağırmalıyız.
         // public DbSet<EntityName> TableNames {get;set}
+        // Class ve Propertyleri --> Tablo ve Sütunlarına dönüşecek
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Experiance> Experiances { get; set; }
