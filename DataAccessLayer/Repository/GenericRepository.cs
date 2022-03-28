@@ -40,7 +40,7 @@ namespace DataAccessLayer.Repository
         public void Update(T t)
         {
             using var c = new Context();
-            c.Update(t); // Update: EF metodu
+            c.Update(t); // Update: EF metodu : .net core ile geldi
             c.SaveChanges();
         }
     }
