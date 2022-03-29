@@ -17,7 +17,7 @@ namespace BusinessLayer.Concrete
         IAboutDal _AboutDal;
 
         // Constructor metodumuz ile ilgili atamalarımızı kullanabileceğiz
-        public AboutManager(IAboutDal aboutDal) 
+        public AboutManager(IAboutDal aboutDal) // EfAboutDal vb gelebilir.
         {
             _AboutDal = aboutDal; // bu eşleştirmeyi yaptıktan sonra IGenericDal metotlarımıza erişebiliriz artık
         }

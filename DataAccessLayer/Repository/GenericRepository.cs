@@ -11,10 +11,11 @@ namespace DataAccessLayer.Repository
     // T : Entitilerimiz : About , Contact , 
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        // 
+        // Bu classdan bir nesne üretirsen EF metotlarına erişirsin.
+        // örneğin view component classlarında üretildi.
         public void Delete(T T)
         {
-            Context c1= new Context();
+            Context c1 = new Context();
             // bu yapı ile alt satırın farkı ne?
             using var c = new Context(); // her yerde kullanacaz
             // c.EntityFramework mettolarına erişebilriz

@@ -9,8 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface ISkillDal : IGenericDal<Skill>
     {
-        
-        
         // "Skill" Entitisi için bir IGenericDal oluşturduk 
         // CRUD işlemlerini IGenericDal içerisinde tanımladı.
         

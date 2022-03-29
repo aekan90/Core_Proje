@@ -8,7 +8,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IGenericService<T>
     {
-        // Bu servisler Business Tarafında CRUD operasyonları için gerekli olan metotların çağrılmadan önce imzasını taşıyacak
+        // Bu servisler Business Tarafında CRUD operasyonları için gerekli olan
+        // metotların çağrılmadan önce imzasını taşıyacak
         // Ek olarak da başka imzalar da gerekebilir.
 
         // CRUD işlemlerini generic olarak IGenericService de yazdığımız için

@@ -9,8 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IAboutDal : IGenericDal<About>
     {
-        
-        
         //// "About" Entitisi için bir Interface oluşturduk ve CRUD işlemlerini tanımladı.
         //void Insert(About P);
         //void Update(About P);

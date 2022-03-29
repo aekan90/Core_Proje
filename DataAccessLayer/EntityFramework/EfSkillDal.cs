@@ -6,7 +6,7 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfSkillDal : GenericRepository<Skill>, ISkillDal
     {
-        // IAboutDal Neden Kullanıldı?
+        // ISkillDal Neden Kullanıldı?
         // ilerde CRUD işlemleri dışında başka işlem gerekirse
         // ve bu işlem sadece Skill entitisine ait olursa
         // bu işlemin imzasını ISkillDal da atılacak
