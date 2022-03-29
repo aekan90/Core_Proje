@@ -11,7 +11,7 @@ namespace BusinessLayer.Concrete
 {
     public class ContactManager : IContactService
     {
-        IContactDal _ContactDal;
+        IContactDal _ContactDal;  // DataAccessLayer.Abstract.IContactDal : IGenericService<About>
 
         public ContactManager(IContactDal ContactDal)
         {
