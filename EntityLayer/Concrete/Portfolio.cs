@@ -14,5 +14,7 @@ namespace EntityLayer.Concrete
         public int PortfolioId { get; set; }
         public string Name { get; set; }
         public string ImageUrl { get; set; }
+        public string Url { get; set; }
+        public string SmallImageUrl { get; set; }
     }
 }
