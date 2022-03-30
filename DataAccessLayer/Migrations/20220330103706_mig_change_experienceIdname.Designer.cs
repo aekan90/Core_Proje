@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220330073028_mig_addcolumn_portfolio")]
-    partial class mig_addcolumn_portfolio
+    [Migration("20220330103706_mig_change_experienceIdname")]
+    partial class mig_change_experienceIdname
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,9 +78,9 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Experiance", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Experience", b =>
                 {
-                    b.Property<int>("ExperianceId")
+                    b.Property<int>("ExperienceId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -97,9 +97,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ExperianceId");
+                    b.HasKey("ExperienceId");
 
-                    b.ToTable("Experiances");
+                    b.ToTable("Experiences");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Feature", b =>

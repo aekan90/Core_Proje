@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IExperianceService : IGenericService<Experiance>
+    public interface IExperienceService : IGenericService<Experience>
     {
         // CRUD işlemlerini generic olarak IGenericService de yazdığımız için
         // burada ve Bu interfaceden inherite alan bütün classlar

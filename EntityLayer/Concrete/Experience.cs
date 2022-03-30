@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace EntityLayer.Concrete
 {
     // ANA SAYFADAKİ experiance SEKMESİ ve Deneyimler KISMI
-    public class Experiance
+    public class Experience
     {
         [Key]  // ID için key atamsı yapıyoruz. ID birincil anahtar olması için
-        public int ExperianceId { get; set; }
+        public int ExperienceId { get; set; }
         public string Name { get; set; }
         public string Date { get; set; }
         public string ImageUrl { get; set; }

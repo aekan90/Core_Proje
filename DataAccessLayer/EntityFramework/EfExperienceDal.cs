@@ -4,7 +4,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfExperianceDal : GenericRepository<Experiance>, IExperianceDal
+    public class EfExperienceDal : GenericRepository<Experience>, IExperienceDal
     {
     }
  

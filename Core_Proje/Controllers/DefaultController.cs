@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Core_Proje.Controllers
 {
@@ -17,6 +21,22 @@ namespace Core_Proje.Controllers
 
         public PartialViewResult NavBarPartial()
         {
+            return PartialView();
+        }
+
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult SendMessage(Message p)
+        {
+            MessageManager messageManager = new MessageManager(new EfMessageDal());
+            p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()); // Mesajın kaydedildiği tarihi DB ye yaz
+            p.Status = true; // Okunduktan sonra false yapacaz
+            messageManager.TAdd(p);
             return PartialView();
         }
     }
