@@ -10,11 +10,12 @@ namespace Core_Proje.Controllers
         SkillManager skillManager = new SkillManager(new EfSkillDal());
         public IActionResult Index()
         {
+
             var values = skillManager.TGetList();
             return View(values);
         }
 
-        [HttpGet]
+        [HttpGet]       
         public IActionResult AddSkill() // Yeni Yetenek Ekle - Get
         {
             var values = skillManager.TGetList();
