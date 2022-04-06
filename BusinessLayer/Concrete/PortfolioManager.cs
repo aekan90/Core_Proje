@@ -17,6 +17,11 @@ namespace BusinessLayer.Concrete
     {
         EfPortfolioDal _efPortfolioDal=new EfPortfolioDal();
 
+        public PortfolioManager(EfPortfolioDal efPortfolioDal)
+        {
+            _efPortfolioDal = efPortfolioDal;
+        }
+
         public void TAdd(Portfolio t)
         {
             _efPortfolioDal.Update(t);
