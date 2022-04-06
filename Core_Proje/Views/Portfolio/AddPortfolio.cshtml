@@ -1,26 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "AddExperience";
+    ViewData["Title"] = "AddPortfolio";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
-    <h3 class="mb-0">Deneyim Ekleme</h3>
+    <h3 class="mb-0">Proje Ekleme</h3>
     <div class="card-body">
         <form class="form-group" method="post">
+
             <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                         <span class="input-group-text"></span>
                     </div>
-                    <input class="form-control" placeholder="Deneyim Adı" type="text" name="Name">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"></span>
-                    </div>
-                    <input class="form-control" placeholder="Şirket Adı- (Tarih)" type="text" name="Date">
+                    <input class="form-control" placeholder="Proje Adı" type="text" name="Name">
                 </div>
             </div>
 
@@ -29,7 +22,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"></span>
                     </div>
-                    <input class="form-control" placeholder="Resim Yolu (.svg)" type="text" name="ImageUrl">
+                    <input class="form-control" placeholder="Resim Yolu (.jpg)" type="text" name="ImageUrl">
                 </div>
             </div>
 
@@ -38,13 +31,21 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"></span>
                     </div>
-                    @*<input class="form-control" placeholder="Bu İş yerinde şunları şunları yaptım" type="text" name="Description">*@
-                    <textarea rows="4" class="form-control" placeholder="Bu iş yerinde edindiğiniz deneyimlerden bahsediniz" name="Description"></textarea>
+                    <input class="form-control" placeholder="Küçük Resim Yolu (.png)" type="text" name="SmallImageUrl">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    <input class="form-control" placeholder="Proje URL Adresi" type="text" name="Url">
                 </div>
             </div>
 
             <div class="text-left">
-                <button class="btn btn-primary my-4">Deneyim Ekle</button>
+                <button class="btn btn-primary my-4">Proje Ekle</button>
             </div>
         </form>
     </div>
@@ -53,3 +54,5 @@
 <div class="table-responsive">
 </div>
 <br />
+
+

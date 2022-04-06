@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using EntityLayer.Concrete
+@model List<Portfolio>
+
+@foreach (var item in Model)
+{
+    <div class="card-header border-0">
+        <h3 class="mb-0">Proje Ekleme</h3>
+        <div class="card-body">
+            <form class="form-group" method="post">
+
+                <div class="form-group mb-3">
+                    <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"></span>
+                        </div>
+                        <input class="form-control" value="@item.PortfolioId" type="hidden" name="PortfolioId">
+                        <input class="form-control" placeholder="@item.Name" type="text" name="Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"></span>
+                        </div>
+                        <input class="form-control" placeholder="@item.ImageUrl" type="text" name="ImageUrl">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"></span>
+                        </div>
+                        <input class="form-control" placeholder="@item.SmallImageUrl" type="text" name="SmallImageUrl">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"></span>
+                        </div>
+                        <input class="form-control" placeholder="@item.Url" type="text" name="Url">
+                    </div>
+                </div>
+
+                <div class="text-left">
+                    <button class="btn btn-primary my-4">Proje Güncelle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+<!-- Light table -->
+<div class="table-responsive">
+</div>
+<br />
