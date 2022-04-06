@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Deneyim Ekleme</h3>
+    <div class="card-body">
+        <form class="form-group" method="post">
+            <div class="form-group mb-3">
+                <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    <input class="form-control" placeholder="Web Design" type="text" name="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    <input class="form-control" placeholder="Webbie LLC. (2018-2020)" type="text" name="Date">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    <input class="form-control" placeholder="/Template/images/services/ui-ux.svg" type="text" name="ImageUrl">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    @*<input class="form-control" placeholder="Bu İş yerinde şunları şunları yaptım" type="text" name="Description">*@
+                    <textarea rows="4" class="form-control" placeholder="Bu İş yerinde şunları şunları yaptım" name="Description"></textarea>
+                </div>
+            </div>
+
+            <div class="text-left">
+                <button class="btn btn-primary my-4">Deneyim Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+</div>
+<br />
