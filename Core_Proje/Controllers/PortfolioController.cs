@@ -31,7 +31,12 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AddPortfolio(Portfolio portfolio) // Yeni Proje Ekle - Post
         {
+            ViewBag.Url1 = "Proje Ekle";
+            ViewBag.Url2 = "Portfolio";
+            ViewBag.Url3 = "AddPortfolio";
+
             portfolioManager.TAdd(portfolio);
+
             return RedirectToAction("Index");
         }
 
