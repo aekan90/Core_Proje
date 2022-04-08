@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using EntityLayer.Concrete
+@model List<Service>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Hizmetler Listesi Tablosu</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="status">RESİM</th>
+                <th scope="col" class="sort" data-sort="budget">HİZMET ADI</th>
+                <th scope="col" class="sort" data-sort="budget">RESİM YOLU (.jpg)</th>
+                <th scope="col" class="sort" data-sort="completion">SİL</th>
+                <th scope="col" class="sort" data-sort="completion">DÜZENLE</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.ServiceId
+                    </th>
+
+                    <td class="budget">
+                        <img src="@item.ImageUrl" width="48" height="48" alt="ui-ux" />
+                    </td>
+
+                    <td class="budget">
+                        @item.Title
+                    </td>
+
+                    <td>
+                        @item.ImageUrl
+                    </td>
+
+                    <td>
+                        <a href="/Service/DeleteService/@item.ServiceId" class="btn btn-sm btn-default">Sil</a>
+                    </td>
+
+                    <td>
+                        <a href="/Service/EditService/@item.ServiceId" class="btn btn-sm btn-info">Güncelle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Service/AddService" class="btn btn-primary my-4">Yeni Servis Ekle</a>
+</div>
+<br />
