@@ -1,25 +1,28 @@
-﻿@{
-    ViewData["Title"] = "EditPortfolio";
+﻿@model EntityLayer.Concrete.Portfolio
+
+@{
+    ViewData["Title"] = "AddPortfolio";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@using EntityLayer.Concrete
-@model List<Portfolio>
 
-@foreach (var item in Model)
-{
-    <div class="card-header border-0">
-        <h3 class="mb-0">Proje Ekleme</h3>
-        <div class="card-body">
-            <form class="form-group" method="post">
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Proje Bilgileri Güncelle</h3>
+    <div class="card-body">
+
+
+        @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+        {
+            <form class="forms-sample">
 
                 <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                        <input class="form-control" value="@item.PortfolioId" type="hidden" name="PortfolioId">
-                        <input class="form-control" placeholder="@item.Name" type="text" name="Name">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control",@placeholder=@Model.Name,@Type="text" })
+                        @Html.ValidationMessageFor(x => x.Name)
                     </div>
                 </div>
 
@@ -28,7 +31,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                        <input class="form-control" placeholder="@item.ImageUrl" type="text" name="ImageUrl">
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control",@placeholder=@Model.ImageUrl,@Type="text"})
+                        @Html.ValidationMessageFor(x => x.ImageUrl)
                     </div>
                 </div>
 
@@ -37,7 +41,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                        <input class="form-control" placeholder="@item.SmallImageUrl" type="text" name="SmallImageUrl">
+                        @Html.TextBoxFor(x => x.SmallImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.png)",@Type="text" })
+                        @Html.ValidationMessageFor(x => x.SmallImageUrl)
                     </div>
                 </div>
 
@@ -46,18 +51,17 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                        <input class="form-control" placeholder="@item.Url" type="text" name="Url">
+                        @Html.TextBoxFor(x => x.Url, new { @class = "form-control",@placeholder="Proje URL Adresi",@Type="text" })
+                        @Html.ValidationMessageFor(x => x.Url)
                     </div>
                 </div>
 
-                <div class="text-left">
-                    <button class="btn btn-primary my-4">Proje Güncelle</button>
-                </div>
+
+                <button class="btn btn-primary my-4">Kaydet</button>
+
             </form>
-        </div>
+
+        }
     </div>
-}
-<!-- Light table -->
-<div class="table-responsive">
 </div>
-<br />
+

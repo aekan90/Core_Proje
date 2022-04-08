@@ -49,11 +49,7 @@ namespace Core_Proje.Controllers
             ViewBag.Url1 = "Deneyim Güncelleme";
             ViewBag.Url2 = "Experience";
             ViewBag.Url3 = "EditExperience";
-            var values = experienceManager.TGetById(id);
-            List<Experience> veri = new List<Experience>
-            {
-                values
-            };
+            Experience veri = experienceManager.TGetById(id);
             return View(veri);
         }
 

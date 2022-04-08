@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -18,26 +20,40 @@ namespace Core_Proje.Controllers
             return View(values);
         }
 
+
+
         [HttpGet]
-        public IActionResult AddPortfolio() // Yeni Proje Ekle - Get
+        public IActionResult AddPortfolio()
         {
             ViewBag.Url1 = "Proje Ekle";
             ViewBag.Url2 = "Portfolio";
             ViewBag.Url3 = "AddPortfolio";
-            var values = portfolioManager.TGetList();
-            return View(values);
+            return View();
         }
 
-        [HttpPost]
+
+        [HttpPost] // portfolio ekleme kısmında taghelper kullanmadığım için bıraktım
         public IActionResult AddPortfolio(Portfolio portfolio) // Yeni Proje Ekle - Post
         {
             ViewBag.Url1 = "Proje Ekle";
             ViewBag.Url2 = "Portfolio";
             ViewBag.Url3 = "AddPortfolio";
 
-            portfolioManager.TAdd(portfolio);
-
-            return RedirectToAction("Index");
+            PortfolioValidator portfolioValidator = new PortfolioValidator();
+            ValidationResult validationResult = portfolioValidator.Validate(portfolio);
+            if (validationResult.IsValid)
+            {
+                portfolioManager.TAdd(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         [HttpGet] // bunu yazmasan da olur varsayılanı HttpGet zaten, ama sen yaz
@@ -54,19 +70,31 @@ namespace Core_Proje.Controllers
             ViewBag.Url1 = "Proje Güncelleme";
             ViewBag.Url2 = "Portfolio";
             ViewBag.Url3 = "EditPortfolio";
-            var values = portfolioManager.TGetById(id);
-            List<Portfolio> veri = new List<Portfolio>
-            {
-                values
-            };
+            Portfolio veri = portfolioManager.TGetById(id);
             return View(veri);
         }
 
         [HttpPost]
         public IActionResult EditPortfolio(Portfolio portfolio) // Proje Güncelle - GET(urlden)
         {
-            portfolioManager.TUpdate(portfolio);
-            return RedirectToAction("Index");
+
+
+
+            PortfolioValidator portfolioValidator = new PortfolioValidator();
+            ValidationResult validationResult = portfolioValidator.Validate(portfolio);
+            if (validationResult.IsValid)
+            {
+                portfolioManager.TUpdate(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
     }

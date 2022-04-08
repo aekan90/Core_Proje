@@ -49,12 +49,8 @@ namespace Core_Proje.Controllers
             ViewBag.Url1 = "Yetenek Güncelleme";
             ViewBag.Url2 = "Skill";
             ViewBag.Url3 = "EditSkill";
-            var values = skillManager.TGetById(id);
-            List<Skill> veri = new List<Skill>
-            {
-                values
-            };
-            return View(veri);
+            Skill values = skillManager.TGetById(id);
+            return View(values);
         }
 
         [HttpPost]
