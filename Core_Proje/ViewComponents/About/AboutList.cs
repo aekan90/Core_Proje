@@ -11,7 +11,7 @@ namespace Core_Proje.ViewComponents.About
         public IViewComponentResult Invoke()
         {
             var values = aboutManager.TGetList(); 
-            return View(values);
+            return View(values[0]);
         }
     }
 }

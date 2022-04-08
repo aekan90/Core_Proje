@@ -54,7 +54,7 @@ namespace Core_Proje.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditSkill(Skill skill) // Yetenek Güncelle - GET(urlden)
+        public IActionResult EditSkill(Skill skill) // Yetenek Güncelle - Post(formdan)
         {
             skillManager.TUpdate(skill);
             return RedirectToAction("Index");
