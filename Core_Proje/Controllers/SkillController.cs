@@ -24,8 +24,7 @@ namespace Core_Proje.Controllers
             ViewBag.Url1 = "Yetenek Ekle";
             ViewBag.Url2 = "Skill";
             ViewBag.Url3 = "AddSkill";
-            var values = skillManager.TGetList();
-            return View(values);
+            return View();
         }
 
         [HttpPost]

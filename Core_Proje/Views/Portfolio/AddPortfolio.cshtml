@@ -9,33 +9,30 @@
     <div class="card">
         <div class="card-body">
             <p class="card-description"> Lütfen Proje bilgilerini giriniz. </p>
-            @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
-            {
-                <form class="forms-sample" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputName1">Proje Adı</label>
-                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control",@placeholder="Proje Adı",@Type="text" })
-                        @Html.ValidationMessageFor(x => x.Name)
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Resim Yolu (.jpg)</label>
-                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.jpg)",@Type="text" })
-                        @Html.ValidationMessageFor(x => x.ImageUrl)
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword4">Küçük Resim Yolu (.png)</label>
-                        @Html.TextBoxFor(x => x.SmallImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.png)",@Type="text" })
-                        @Html.ValidationMessageFor(x => x.SmallImageUrl)
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleTextarea1">URL</label>
-                        @Html.TextBoxFor(x => x.Url, new { @class = "form-control",@placeholder="Proje URL Adresi",@Type="text" })
-                        @Html.ValidationMessageFor(x => x.Url)
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Proje Ekle</button>
-                    <button class="btn btn-dark">Vazgeç</button>
-                </form>
-            }
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputName1">Proje Adı</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control",@placeholder="Proje Adı",@Type="text" })
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Resim Yolu (.jpg)</label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.jpg)",@Type="text" })
+                    @Html.ValidationMessageFor(x => x.ImageUrl)
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Küçük Resim Yolu (.png)</label>
+                    @Html.TextBoxFor(x => x.SmallImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.png)",@Type="text" })
+                    @Html.ValidationMessageFor(x => x.SmallImageUrl)
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">URL</label>
+                    @Html.TextBoxFor(x => x.Url, new { @class = "form-control",@placeholder="Proje URL Adresi",@Type="text" })
+                    @Html.ValidationMessageFor(x => x.Url)
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Proje Ekle</button>
+                <button class="btn btn-dark">Vazgeç</button>
+            </form>
         </div>
     </div>
 </div>
