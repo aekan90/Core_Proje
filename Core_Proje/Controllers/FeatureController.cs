@@ -16,6 +16,7 @@ namespace Core_Proje.Controllers
         {
             ViewBag.Url1 = "Öne Çıkan";
             ViewBag.Url2 = "Feature";
+            ViewBag.Url3 = "";
 
             List<Feature> featureList = featureManager.TGetList();
             return View(featureList[0]);

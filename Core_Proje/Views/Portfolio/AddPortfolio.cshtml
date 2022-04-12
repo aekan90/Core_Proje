@@ -2,66 +2,40 @@
 
 @{
     ViewData["Title"] = "AddPortfolio";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-
-
-<div class="card-header border-0">
-    <h3 class="mb-0">Yeni Proje Ekleme</h3>
-    <div class="card-body">
-
-
-        @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
-        {
-            <form class="forms-sample">
-
-                <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
-                        </div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description"> Lütfen Proje bilgilerini giriniz. </p>
+            @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+            {
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Proje Adı</label>
                         @Html.TextBoxFor(x => x.Name, new { @class = "form-control",@placeholder="Proje Adı",@Type="text" })
                         @Html.ValidationMessageFor(x => x.Name)
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-group input-group-merge input-group-alternative">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
-                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Resim Yolu (.jpg)</label>
                         @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.jpg)",@Type="text" })
                         @Html.ValidationMessageFor(x => x.ImageUrl)
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-group input-group-merge input-group-alternative">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
-                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Küçük Resim Yolu (.png)</label>
                         @Html.TextBoxFor(x => x.SmallImageUrl, new { @class = "form-control",@placeholder="Resim Yolu (.png)",@Type="text" })
                         @Html.ValidationMessageFor(x => x.SmallImageUrl)
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-group input-group-merge input-group-alternative">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
-                        </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">URL</label>
                         @Html.TextBoxFor(x => x.Url, new { @class = "form-control",@placeholder="Proje URL Adresi",@Type="text" })
                         @Html.ValidationMessageFor(x => x.Url)
                     </div>
-                </div>
-
-
-                <button class="btn btn-primary my-4">Kaydet</button>
-
-            </form>
-
-        }
+                    <button type="submit" class="btn btn-primary mr-2">Proje Ekle</button>
+                    <button class="btn btn-dark">Vazgeç</button>
+                </form>
+            }
+        </div>
     </div>
 </div>
-

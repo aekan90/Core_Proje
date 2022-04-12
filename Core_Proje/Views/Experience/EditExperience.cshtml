@@ -1,63 +1,36 @@
 ﻿@{
     ViewData["Title"] = "EditExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-
 
 @using EntityLayer.Concrete
 @model Experience
 
-
-<div class="card-header border-0">
-    <h3 class="mb-0">Deneyim Güncelleme</h3>
-    <div class="card-body">
-        <form class="form-group" method="post">
-            <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"></span>
-                    </div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description"> Lütfen deneyim bilgilerini giriniz. </p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputName1">Deneyim Adı</label>
                     <input class="form-control" value="@Model.ExperienceId" type="hidden" name="ExperienceId">
-                    <input class="form-control" placeholder="@Model.Name" type="text" name="Name">
+                    <input type="text" class="form-control" placeholder="@Model.Name" name="Name">
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"></span>
-                    </div>
-                    <input class="form-control" placeholder="@Model.Date" type="text" name="Date">
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Şirket Adı ve Tarih</label>
+                    <input type="text" class="form-control" placeholder="@Model.Date" name="Date">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"></span>
-                    </div>
-                    <input class="form-control" placeholder="@Model.ImageUrl" type="text" name="ImageUrl">
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Resim Yolu (.svg)</label>
+                    <input type="text" class="form-control" placeholder="@Model.ImageUrl" name="ImageUrl">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"></span>
-                    </div>
-                    @*<input class="form-control" placeholder="Bu İş yerinde şunları şunları yaptım" type="text" name="Description">*@
-                    <textarea rows="4" class="form-control" placeholder="@Model.Description" name="Description"></textarea>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Açıklama</label>
+                    <textarea class="form-control" rows="4" placeholder="@Model.Description" name="Description"></textarea>
                 </div>
-            </div>
-
-            <div class="text-left">
-                <button class="btn btn-primary my-4">Deneyim Güncelle</button>
-            </div>
-        </form>
+                <button type="submit" class="btn btn-primary mr-2">Deneyim Güncelle</button>
+                <button class="btn btn-dark">Vazgeç</button>
+            </form>
+        </div>
     </div>
 </div>
-
-<!-- Light table -->
-<div class="table-responsive">
-</div>
-<br />
-

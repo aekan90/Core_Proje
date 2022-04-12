@@ -1,53 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 @using EntityLayer.Concrete
 @model List<Experience>
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Deneyim Listesi Tablosu</h3>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> ÜNVAN </th>
+                                <th> TARİH </th>
+                                <th> DENEYİM DÜZENLE </th>
+                                <th> DENEYİM SİL </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @item.ExperienceId </td>
+                                    <td>  @item.Name </td>
+                                    <td> @item.Date </td>
+                                    <td> <a href="/Experience/EditExperience/@item.ExperienceId" class="btn btn-outline-warning btn-fw">Düzenle</a> </td>
+                                    <td> <a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-outline-danger btn-fw">Sil</a> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/Experience/AddExperience" class="btn btn-outline-success btn-fw">Yeni Deneyim Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Light table -->
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col" class="sort" data-sort="name">#</th>
-                <th scope="col" class="sort" data-sort="budget">RESİM</th>
-                <th scope="col" class="sort" data-sort="status">ÜNVAN</th>
-                <th scope="col" class="sort" data-sort="status">TARİH</th>
-                <th scope="col" class="sort" data-sort="completion">SİL</th>
-                <th scope="col" class="sort" data-sort="completion">DÜZENLE</th>
-            </tr>
-        </thead>
-        <tbody class="list">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <th>
-                        @item.ExperienceId
-                    </th>
-                    <td class="budget">
-                        <img src="@item.ImageUrl" width="48" height="48" alt="ui-ux" />
-                    </td>
-                    <td class="budget">
-                        @item.Name
-                    </td>
-                    <td>
-                        @item.Date
-                    </td>
-                    <td>
-                        <a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-sm btn-default">Sil</a>
-                    </td>
-                    <td>
-                        <a href="/Experience/EditExperience/@item.ExperienceId" class="btn btn-sm btn-info">Güncelle</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <a href="/Experience/AddExperience" class="btn btn-primary my-4">Yeni Deneyim Ekle</a>
-</div>
-<br />
