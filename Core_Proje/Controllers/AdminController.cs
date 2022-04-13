@@ -4,6 +4,9 @@ namespace Core_Proje.Controllers
 {
     public class AdminController : Controller
     {
+        // partial view view içinda .cshtml olarak tutulur.
+        // controller da çalışır
+        // layouttan çağırılır
         public PartialViewResult PartialSideBar()
         {
             return PartialView();
