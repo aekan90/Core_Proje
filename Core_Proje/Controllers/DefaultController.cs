@@ -6,7 +6,7 @@ using System;
 
 namespace Core_Proje.Controllers
 {
-    public class DefaultController : Controller
+    public class DefaultController : Controller 
     {
         public IActionResult Index()  // MVC de ActionResult .core da IActionResult
         {
