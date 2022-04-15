@@ -16,5 +16,6 @@ namespace EntityLayer.Concrete
         public string ImageUrl { get; set; }
         public string Url { get; set; }
         public string SmallImageUrl { get; set; }
+        public bool Status { get; set; }
     }
 }

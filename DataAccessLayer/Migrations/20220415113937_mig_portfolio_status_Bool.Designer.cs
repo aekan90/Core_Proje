@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220330103603_mig_changenameforExperience")]
-    partial class mig_changenameforExperience
+    [Migration("20220415113937_mig_portfolio_status_Bool")]
+    partial class mig_portfolio_status_Bool
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,7 +80,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Experience", b =>
                 {
-                    b.Property<int>("ExperianceId")
+                    b.Property<int>("ExperienceId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -97,7 +97,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ExperianceId");
+                    b.HasKey("ExperienceId");
 
                     b.ToTable("Experiences");
                 });
@@ -165,6 +165,9 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<string>("SmallImageUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
