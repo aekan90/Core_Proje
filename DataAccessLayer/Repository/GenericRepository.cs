@@ -15,6 +15,13 @@ namespace DataAccessLayer.Repository
         // örneğin view component classlarında üretildi.
         public void Delete(T T)
         {
+            // Using anahtar sözcüğü otomatik olarak Dispose metodunu uygular.
+            // Dispose ile öğe kullanıldıktan hemen sonra bellekten atılır.
+            // Dispose işleminin gerçekleşmesi için IDisposable arayüzü ile kontrat imzalaması gerekir.
+            // DbContext sınıfı da IDisposable arayüzü ile kontrat imzaladığı için
+            // using anahtar sözcüğü ile çağrılarak bir nevi kaynakları serbest bırakma işini
+            // garbage collectorden devralıp, iş biter bitmez yıkıcı metodun tetiklenmesini sağlıyoruz.
+            // Çoğu zaman garbage collector yıkıcı metodun ne zaman tetikleneceğini kestiremez.
             Context c1 = new Context();
             // bu yapı ile alt satırın farkı ne?
             using var c = new Context(); // her yerde kullanacaz
