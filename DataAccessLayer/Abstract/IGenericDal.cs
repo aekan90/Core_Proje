@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    // Generic İnterfaceimizi oluşturduk ki bu metotları her interface içerisinde yazmayalım
-    // İçerisine generic metotlarımızı yazdık içlerini concreate classlarda dolduracağız
+    // Generic İnterfaceimizi oluşturduk ki bu metotları
+    // her interface içerisinde yazmayalım
+    // İçerisine generic metotlarımızı yazdık içlerini
+    // concreate classlarda dolduracağız
     public interface IGenericDal<T> where T : class
     {
         // bu metotlar concrate içinde doldurulacak
