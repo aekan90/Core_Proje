@@ -1,9 +1,10 @@
 ﻿using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IUserMessageDal: IGenericDal<UserMessage>
+    public interface IUserMessageDal : IGenericDal<UserMessage>
     {
-        public void GetUserMessageWithUser()
+        public List<UserMessage> GetUserMessageWithUser();
     }
 }
