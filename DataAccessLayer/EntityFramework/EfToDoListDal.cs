@@ -11,5 +11,7 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfToDoListDal : GenericRepository<ToDoList>, IToDoListDal
     {
+
+        public List<ToDoList> First5ToDoList
     }
 }

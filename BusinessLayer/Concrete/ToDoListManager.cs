@@ -17,7 +17,7 @@ namespace BusinessLayer.Concrete
 
         IToDoListDal _toDoListDal;
 
-        public ToDoListManager(IToDoListDal toDoListDal)
+        public ToDoListManager(IToDoListDal toDoListDal) // IToDoListDal dan türeyen EfAboutDal gelecek yani 
         {
             _toDoListDal = toDoListDal;
         }
