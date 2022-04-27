@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace DataAccessLayer.Concrete
     // Context Classı
     // 1-) DB yapılandırmamız içindeki bağlantı stringini tutar.
     // 2-) DB 'ye yansıtılacak olan tabloları tutar             
-    public class Context : DbContext // DB Setleri kullanabilmek için 
+    public class Context : IdentityDbContext // DB Setleri kullanabilmek için 
     {
         // tabloları property olarak çağıracağız.
 
