@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrete
     // Context Classı
     // 1-) DB yapılandırmamız içindeki bağlantı stringini tutar.
     // 2-) DB 'ye yansıtılacak olan tabloları tutar             
-    public class Context : IdentityDbContext // DB Setleri kullanabilmek için 
+    public class Context : IdentityDbContext<WriterUser, WriterRole, int>// DB Setleri kullanabilmek için 
     {
         // tabloları property olarak çağıracağız.
 
@@ -39,5 +39,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<UserMessage> UserMessages { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
+        public DbSet<ToDoList> Test1 { get; set; }
     }
 }

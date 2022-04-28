@@ -16,7 +16,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         {
             if (!ModelState.IsValid)
             {
-                userRegisterViewModel.
+               // userRegisterViewModel.
             }
             return View();
         }
