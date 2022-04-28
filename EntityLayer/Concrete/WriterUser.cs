@@ -11,6 +11,7 @@ namespace EntityLayer.Concrete
     public class WriterUser : IdentityUser<int>
     {// bu 3 property identity ile gelen AspNetUser tablosunda yok
         // migration ile AspNetUser tablosuna sütun ekleyecez olacak.
+        // Context mirasına bak
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImageUrl { get; set; }
