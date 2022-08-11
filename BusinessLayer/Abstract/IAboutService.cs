@@ -12,5 +12,6 @@ namespace BusinessLayer.Abstract
         // CRUD işlemlerini generic olarak IGenericService de yazdığımız için
         // burada ve Bu interfaceden inherite alan bütün classlar
         // Ortak CRUD işlemlerine erişim hakkına sahip olacaklar
+        // geri döndim 11.08.2022
     }
 }
