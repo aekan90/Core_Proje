@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220427135759_mig_2")]
-    partial class mig_2
+    [Migration("20220811082429_ProjeDBKurma")]
+    partial class ProjeDBKurma
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

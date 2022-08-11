@@ -20,7 +20,7 @@ namespace DataAccessLayer.Concrete
         // Context(bağlam) Stringi Ayarlıyoruz. Bizim bağlantı adresimizi tutacak
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-OA1OLIM;database=CoreProjeDB;integrated security=true");
+            optionsBuilder.UseSqlServer("server=.;database=CoreProjeDB;integrated security=true");
         }
 
         // Entity katmanındaki sınıfları tek tek burada çağırmalıyız.
