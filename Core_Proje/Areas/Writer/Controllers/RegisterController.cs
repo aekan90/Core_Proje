@@ -30,7 +30,6 @@ namespace Core_Proje.Areas.Writer.Controllers
          // eşleştirilerek bir kayıt yapılmak isteniyor.
          // bunun için bize bir model nesnesi bir de db nesnesi gerekli
 
-
             //if (!ModelState.IsValid)
             //{
 
@@ -42,7 +41,6 @@ namespace Core_Proje.Areas.Writer.Controllers
                 UserName = _userRegisterViewModel.UserName,
                 Email = _userRegisterViewModel.Email,
             };
-
 
             if (_userRegisterViewModel.Password == _userRegisterViewModel.ConfirmPassword)
             {
