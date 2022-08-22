@@ -13,6 +13,7 @@ namespace DataAccessLayer.Concrete
     // 1-) DB yapılandırmamız içindeki bağlantı stringini tutar.
     // 2-) DB 'ye yansıtılacak olan tabloları tutar             
     public class Context : IdentityDbContext<WriterUser, WriterRole, int>// DB Setleri kullanabilmek için 
+    // WriterUser daki 3 propertimizin AspNetUsers tablosuna sütun eklenebilmesi için migratin öncesi buraya parametre olarak vermeliyiz
     {
         // tabloları property olarak çağıracağız.
 

@@ -24,6 +24,7 @@ namespace Core_Proje
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // Bu yöntem çalýþma zamaný tarafýndan çaðrýlýr. Kapsayýcýya hizmet eklemek için bu yöntemi kullanýn.
         public void ConfigureServices(IServiceCollection services)
         {
             // <-- identity kütüphanesinin çalýþmasý için eklendi
