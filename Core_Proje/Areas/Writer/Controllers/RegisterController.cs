@@ -9,7 +9,7 @@ namespace Core_Proje.Areas.Writer.Controllers
     [Area("Writer")]
     public class RegisterController : Controller
     {
-        private readonly UserManager<WriterUser> _userManager; // UserManager : Identity sınıfı
+        private readonly UserManager<WriterUser> _userManager; // UserManager : Identity sınıfının DB Manager'ı
 
         // Dependency Injection kullanmamız gerekiyor, class ismine ctrl+. --> Generate Constructor
         public RegisterController(UserManager<WriterUser> userManager)
@@ -33,7 +33,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             //if (!ModelState.IsValid)
             //{
 
-            WriterUser writerUser = new WriterUser()
+            WriterUser writerUser = new WriterUser() // WriterUser : IdentityUser<int>
             {// WriterUser.propertyleri = AspNetUsersTablosu.sütunları
                 Name = _userRegisterViewModel.Name,
                 Surname = _userRegisterViewModel.Surname,
@@ -49,7 +49,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Index", "Register", new { area = "Writer" });
                 }
                 else
                 {
