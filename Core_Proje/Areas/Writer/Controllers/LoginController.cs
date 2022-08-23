@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
+    [Area("Writer")]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
