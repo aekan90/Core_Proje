@@ -52,6 +52,7 @@ namespace Core_Proje
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
