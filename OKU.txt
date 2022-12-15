@@ -1,5 +1,5 @@
 PROJEYİ SIFIRDAN YENİ BİLGİSAYARA NASIL KURARIM?
-
+   
 1- Projeyi github dan bilgisayarına çek
 2- projenin ders ders notları drivedaki proje dökümanında mevcut.
 3- DAL>Concrete>Context içinde server=DBNAME
@@ -8,3 +8,6 @@ PROJEYİ SIFIRDAN YENİ BİLGİSAYARA NASIL KURARIM?
 6- pm>update-database
 7- Proje Code First ile oluşturulduğundan tabloları kolayca oluşturabilirsin,
    sonra içerisine veri atmak için projenin bitmiş halini udemyden indir tablo verilerini oradan kendi db ne çek.
+   
+   
+   
